@@ -5,6 +5,43 @@ body {
   font-family: Helvetica, sans-serif;
 }
 
+.message {
+  margin: 0 auto;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 1px solid red;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
+  font-size: 1.25rem;
+}
+
+.message.animate {
+  animation: digitando 4s steps(22) forwards, blink 0.7s infinite;
+}
+
+@keyframes digitando {
+  from {
+    width: 0;
+  }
+  to {
+    width: 210px;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-color: red;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: red;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

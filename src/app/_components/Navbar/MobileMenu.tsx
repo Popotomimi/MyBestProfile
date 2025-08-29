@@ -7,8 +7,11 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Link from "next/link";
 
 const MobileMenu = () => {
+  const menuItems = ["Contact", "Resume", "About", "Certificate", "Projects"];
+
   return (
     <div className="fixed top-6 right-6 z-50">
       <Menubar className="bg-transparent border-transparent">
@@ -18,17 +21,14 @@ const MobileMenu = () => {
           </MenubarTrigger>
 
           <MenubarContent className="bg-purple-700 text-white rounded-lg shadow-lg border-none">
-            <MenubarItem className="hover:bg-purple-600">Contact</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem className="hover:bg-purple-600">Resume</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem className="hover:bg-purple-600">About</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem className="hover:bg-purple-600">
-              Certificate
-            </MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem className="hover:bg-purple-600">Projects</MenubarItem>
+            {menuItems.map((item) => (
+              <Link key={item} href={`/#${item.toLowerCase()}`} passHref>
+                <MenubarItem className="hover:bg-purple-600 cursor-pointer">
+                  {item}
+                  <MenubarSeparator />
+                </MenubarItem>
+              </Link>
+            ))}
           </MenubarContent>
         </MenubarMenu>
       </Menubar>
