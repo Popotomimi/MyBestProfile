@@ -57,8 +57,8 @@ export default function Home() {
           </Button>
         </div>
       </div>
-      <About />
       <Projects />
+      <About />
     </div>
   );
 }
