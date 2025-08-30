@@ -44,6 +44,39 @@ body {
   }
 }
 
+@keyframes scroll-step {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.scroll-step {
+  animation: scroll-step 12s steps(3) infinite;
+  animation-play-state: running;
+}
+
+.group:hover .scroll-step {
+  animation-play-state: paused;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
