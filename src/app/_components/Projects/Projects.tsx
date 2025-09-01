@@ -14,7 +14,9 @@ const Projects = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [position, setPosition] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const horizontalRef = useRef<HTMLDivElement | null>(null);
 
+  // Auto-play do carrossel vertical (desktop)
   useEffect(() => {
     startScroll();
     return () => stopScroll();
@@ -22,44 +24,54 @@ const Projects = () => {
 
   const startScroll = () => {
     if (intervalRef.current) return;
-
     intervalRef.current = setInterval(() => {
       setPosition((prev) => {
         const next = prev + 1;
-        if (next >= projects.length) {
-          return 0;
-        }
-        return next;
+        return next >= projects.length ? 0 : next;
       });
     }, 3000);
   };
 
   const stopScroll = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
+    if (!intervalRef.current) return;
+    clearInterval(intervalRef.current);
+    intervalRef.current = null;
   };
+
+  // Auto-play do carrossel horizontal (mobile)
+  useEffect(() => {
+    const container = horizontalRef.current;
+    if (!container) return;
+
+    const scrollStep = 80 + 25; // largura da bolinha + gap (80px + 16px)
+    const delay = 4000; // tempo entre movimentos
+
+    const interval = setInterval(() => {
+      const maxScroll = container.scrollWidth - container.clientWidth;
+
+      if (container.scrollLeft + scrollStep >= maxScroll) {
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        container.scrollBy({ left: scrollStep, behavior: "smooth" });
+      }
+    }, delay);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleClick = (index: number) => {
     setSelectedIndex(index);
-
-    // 👇 Lógica para subir ou descer
-    if (index < position && position > 0) {
-      setPosition((prev) => prev - 1);
-    } else if (index > position && position < projects.length - 1) {
-      setPosition((prev) => prev + 1);
-    }
   };
 
   return (
     <div id="projects" className="mt-28 px-4">
       <h2 className="text-left text-2xl mb-5">Projects</h2>
       <Line />
+
       <div className="flex flex-row flex-nowrap justify-start items-start gap-4 mt-10 px-4 w-full overflow-hidden">
-        {/* Carrossel da Esquerda */}
+        {/* Carrossel vertical (desktop) */}
         <div
-          className="relative basis-[20%] min-w-[100px] h-96 overflow-hidden"
+          className="hidden md:block relative basis-[20%] min-w-[100px] h-96 overflow-hidden"
           onMouseEnter={stopScroll}
           onMouseLeave={startScroll}>
           <div
@@ -86,10 +98,10 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Carrossel da Direita */}
+        {/* Conteúdo do projeto selecionado */}
         <div
           key={selectedIndex}
-          className="basis-[80%] md:ml-36 h-96 p-4 flex items-center justify-center md:max-w-[50%] bg-zinc-900 rounded shadow-[0_0_15px_rgba(255,255,255,0.3)] animate-slide-in">
+          className="basis-full md:basis-[80%] md:ml-44 my-5 h-96 p-4 flex items-center justify-center md:max-w-[50%] bg-zinc-900 rounded shadow-[0_0_15px_rgba(255,255,255,0.3)] animate-slide-in">
           <div className="text-center text-white max-w-full">
             <Image
               src={projects[selectedIndex].image}
@@ -107,18 +119,40 @@ const Projects = () => {
                 href={projects[selectedIndex].git}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-purple-600 transform hover:scale-110 transition duration-300 ease-in-out md:text-3xl">
+                className="text-white hover:text-purple-600 transform hover:scale-110 transition duration-300 ease-in-out text-3xl">
                 <IoLogoGithub />
               </Link>
               <Link
                 href={projects[selectedIndex].online}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-purple-600 transform hover:scale-110 transition duration-300 ease-in-out md:text-3xl">
+                className="text-white hover:text-purple-600 transform hover:scale-110 transition duration-300 ease-in-out text-3xl">
                 <GrDeploy />
               </Link>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Carrossel horizontal (mobile) */}
+      <div
+        ref={horizontalRef}
+        className="block md:hidden mt-3 overflow-x-hidden px-2 scroll-smooth">
+        <div className="flex gap-7">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              onClick={() => handleClick(index)}
+              className="flex-shrink-0 w-[80px] cursor-pointer">
+              <Image
+                className="rounded-full mt-5 mb-5 w-[80px] h-[80px] object-cover shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+                src={project.image}
+                width={80}
+                height={80}
+                alt="Imagem do projeto"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

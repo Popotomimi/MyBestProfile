@@ -54,7 +54,7 @@ body {
 }
 
 .scroll-step {
-  animation: scroll-step 12s steps(3) infinite;
+  animation: scroll-step 12s steps(4) infinite;
   animation-play-state: running;
 }
 

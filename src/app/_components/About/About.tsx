@@ -7,7 +7,7 @@ const About = () => {
       id="about"
       className="flex flex-col md:flex-row items-center justify-center gap-8 mt-28 px-4">
       {/* Imagem */}
-      <div className="w-72 h-72 md:ml-28 shadow-[0_0_15px_rgba(255,255,255,0.3)] rounded-lg">
+      <div className="w-72 h-72 shadow-[0_0_15px_rgba(255,255,255,0.3)] rounded-lg">
         <Image
           src="https://avatars.githubusercontent.com/u/92410083?v=4"
           alt="Roberto"
