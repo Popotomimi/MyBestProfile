@@ -1,13 +1,4 @@
-// data/projects.ts
-
-export interface Project {
-  id: number;
-  image: string;
-  content: string;
-  text: string;
-  git: string;
-  online: string;
-}
+import { Project } from "@/types/Project";
 
 export const projects: Project[] = [
   {
