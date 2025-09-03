@@ -7,13 +7,15 @@ import { Project } from "@/types/Project";
 const ProjectDetails = ({ project }: { project: Project }) => (
   <div className="basis-full md:basis-[80%] md:ml-44 my-5 h-96 p-4 flex items-center justify-center md:max-w-[50%] bg-zinc-900 rounded shadow-[0_0_15px_rgba(255,255,255,0.3)] animate-slide-in">
     <div className="text-center text-white max-w-full">
-      <Image
-        src={project.image}
-        width={180}
-        height={180}
-        alt="Imagem do projeto"
-        className="rounded-sm m-auto object-cover max-w-[250px] w-full h-auto"
-      />
+      <div className="group">
+        <Image
+          src={project.image}
+          width={180}
+          height={180}
+          alt="Imagem do projeto"
+          className="rounded-sm m-auto object-cover max-w-[250px] w-full h-auto group-hover:scale-105 duration-300 group-hover:-rotate-6"
+        />
+      </div>
       <h3 className="font-bold mt-5 text-xl mb-4">{project.content}</h3>
       <p className="text-sm px-2">{project.text}</p>
       <div className="flex justify-center gap-6 mt-6">

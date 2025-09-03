@@ -18,7 +18,7 @@ const HorizontalCarousel = ({
 
   return (
     <div className="block md:hidden mt-3 overflow-hidden px-2 w-full max-w-[325px] mx-auto">
-      <div ref={horizontalRef} className="flex gap-7">
+      <div ref={horizontalRef} className="flex gap-7 overflow-hidden">
         {projects.map((project, index) => (
           <div
             key={index}

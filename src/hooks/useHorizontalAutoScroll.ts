@@ -10,6 +10,7 @@ export const useHorizontalAutoScroll = (
     if (!container) return;
 
     const interval = setInterval(() => {
+      console.log("scrolling...");
       const maxScroll = container.scrollWidth - container.clientWidth;
 
       if (container.scrollLeft + step >= maxScroll) {

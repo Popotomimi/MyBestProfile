@@ -7,6 +7,7 @@ import Photo from "./_components/Photo/Photo";
 import { Button } from "@/components/ui/button";
 import About from "./_components/About/About";
 import Projects from "./_components/Projects/Projects";
+import Skills from "./_components/Skills/Skills";
 
 export default function Home() {
   useEffect(() => {
@@ -37,7 +38,7 @@ export default function Home() {
         <h1 className="text-2xl font-bold">Sou o Roberto de Oliveira</h1>
         <p className="text-xl font-bold">
           FullStack{" "}
-          <span id="message" className="message text-red-600">
+          <span id="message" className="message text-red-600 pb-0.5">
             JavaScript Developer
           </span>
         </p>
@@ -59,6 +60,7 @@ export default function Home() {
       </div>
       <Projects />
       <About />
+      <Skills />
     </div>
   );
 }
