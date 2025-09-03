@@ -74,7 +74,7 @@ const Skills = () => {
         {/* Seta direita */}
         <button
           onClick={handleNext}
-          className="absolute cursor-pointer right-0 text-2xl p-1 rounded-md bg-zinc-900 hover:scale-110 hover:text-purple-600 transition-transform z-50">
+          className="absolute cursor-pointer right-[-5px] text-2xl p-1 rounded-md bg-zinc-900 hover:scale-110 hover:text-purple-600 transition-transform z-50">
           <IoIosArrowForward />
         </button>
       </div>

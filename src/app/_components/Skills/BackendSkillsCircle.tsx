@@ -16,7 +16,7 @@ import {
 const backendIcons = [
   { icon: <FaNodeJs />, label: "Node.js", color: "#68A063" },
   { icon: <SiNestjs />, label: "Nest.js", color: "#E0234E" },
-  { icon: <SiExpress />, label: "Express", color: "#000000" },
+  { icon: <SiExpress />, label: "Express", color: "#c3c3c3" },
   { icon: <SiMysql />, label: "MySQL", color: "#00758F" },
   { icon: <SiMongodb />, label: "MongoDB", color: "#47A248" },
   { icon: <SiPostgresql />, label: "PostgreSQL", color: "#336791" },
@@ -32,15 +32,15 @@ const backendIcons = [
 
 const positions = [
   { top: "0%", left: "50%" },
-  { top: "30%", left: "90%" },
+  { top: "30%", left: "92%" },
   { top: "50%", left: "100%" },
   { top: "75%", left: "90%" },
   { top: "95%", left: "75%" },
   { top: "100%", left: "50%" },
   { top: "75%", left: "7%" },
   { top: "50%", left: "0%" },
-  { top: "30%", left: "5%" },
-  { top: "10%", left: "20%" },
+  { top: "30%", left: "7%" },
+  { top: "10%", left: "25%" },
   { top: "10%", left: "75%" },
   { top: "95%", left: "25%" },
   { top: "50%", left: "80%" },
@@ -82,7 +82,7 @@ const BackendSkillsCircle = () => {
         return (
           <div
             key={index}
-            className={`absolute text-3xl cursor-pointer transition-all duration-700 ease-in-out ${
+            className={`absolute text-3xl cursor-pointer transition-all bg-zinc-900 p-2 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.3)] duration-700 ease-in-out ${
               isAnimating ? "top-1/2 left-1/2 opacity-0 scale-0" : ""
             } hover:scale-110`}
             style={{

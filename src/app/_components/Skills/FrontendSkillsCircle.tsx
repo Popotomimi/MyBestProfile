@@ -17,7 +17,7 @@ import {
 const frontendIcons = [
   { icon: <FaReact />, label: "React", color: "#61DBFB" },
   { icon: <SiTypescript />, label: "TypeScript", color: "#3178C6" },
-  { icon: <SiNextdotjs />, label: "Next.js", color: "#000000" },
+  { icon: <SiNextdotjs />, label: "Next.js", color: "#c3c3c3" },
   { icon: <FaAngular />, label: "Angular", color: "#DD0031" },
   { icon: <SiJavascript />, label: "JavaScript", color: "#F7DF1E" },
   { icon: <FaHtml5 />, label: "HTML5", color: "#E34F26" },
@@ -60,7 +60,7 @@ const FrontendSkillsCircle = () => {
 
   return (
     <div className="relative w-full max-w-[400px] h-[400px] mx-auto mt-10">
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl p-10 rounded-full bg-zinc-900 shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl sm:text-5xl p-10 sm:p-6 rounded-full bg-zinc-900 shadow-[0_0_15px_rgba(255,255,255,0.3)]">
         <div style={{ color: frontendIcons[selectedIndex ?? 0].color }}>
           {frontendIcons[selectedIndex ?? 0].icon}
         </div>
@@ -72,7 +72,7 @@ const FrontendSkillsCircle = () => {
         return (
           <div
             key={index}
-            className={`absolute text-3xl cursor-pointer transition-all duration-700 ease-in-out ${
+            className={`absolute text-3xl cursor-pointer transition-all bg-zinc-900 p-2 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.3)] duration-700 ease-in-out ${
               isAnimating ? "top-1/2 left-1/2 opacity-0 scale-0" : ""
             } hover:scale-110`}
             style={{
