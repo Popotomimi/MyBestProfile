@@ -17,7 +17,7 @@ const Navbar = () => {
                 <NavigationMenuLink className="rounded-lg" asChild>
                   <Link
                     href={`/#${item.toLowerCase()}`}
-                    className="text-white py-2 px-5 bg-zinc-900 shadow-[0_2px_10px_rgba(255,255,255,0.1)] transition-colors hover:bg-purple-600 hover:text-white">
+                    className="text-white py-2 px-5 bg-zinc-900 shadow-[-4px_-4px_10px_rgba(255,255,255,0.1),4px_4px_10px_rgba(0,0,0,0.2)] transition-colors hover:bg-purple-600 hover:text-white">
                     {item}
                   </Link>
                 </NavigationMenuLink>

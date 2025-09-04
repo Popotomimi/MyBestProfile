@@ -59,7 +59,7 @@ const FrontendSkillsCircle = () => {
 
   return (
     <div className="relative w-full max-w-[300px] sm:max-w-[400px] h-[300px] sm:h-[400px] mx-auto mt-10">
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl sm:text-5xl p-10 sm:p-6 rounded-full bg-zinc-900 shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl sm:text-5xl p-10 sm:p-6 rounded-full bg-zinc-900 shadow-[-4px_-4px_10px_rgba(255,255,255,0.1),4px_4px_10px_rgba(0,0,0,0.2)]">
         <div style={{ color: frontendIcons[selectedIndex ?? 0].color }}>
           {frontendIcons[selectedIndex ?? 0].icon}
         </div>
@@ -71,7 +71,7 @@ const FrontendSkillsCircle = () => {
         return (
           <div
             key={index}
-            className={`absolute text-xl sm:text-3xl cursor-pointer transition-all bg-zinc-900 p-2 sm:p-3 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.3)] duration-700 ease-in-out ${
+            className={`absolute text-xl sm:text-3xl cursor-pointer transition-all bg-zinc-900 p-2 sm:p-3 rounded-full shadow-[-4px_-4px_10px_rgba(255,255,255,0.1),4px_4px_10px_rgba(0,0,0,0.2)] duration-700 ease-in-out ${
               isAnimating ? "top-1/2 left-1/2 opacity-0 scale-0" : ""
             } hover:scale-110`}
             style={{

@@ -10,6 +10,8 @@ import Projects from "./_components/Projects/Projects";
 import Skills from "./_components/Skills/Skills";
 import Certifications from "./_components/Certifications/Certifications";
 import Experience from "./_components/Experience/Experience";
+import Contact from "./_components/Contact/Contact";
+import Link from "next/link";
 
 export default function Home() {
   useEffect(() => {
@@ -52,12 +54,16 @@ export default function Home() {
           com qualidade e propósito.
         </p>
         <div className="flex items-center justify-center gap-7 mt-10">
-          <Button className="cursor-pointer text-white py-2 px-5 bg-zinc-900 shadow-[0_2px_10px_rgba(255,255,255,0.1)] transition-colors hover:bg-purple-600 hover:text-white">
+          <Link
+            href="#certificate"
+            className="cursor-pointer rounded-md text-white py-2 px-5 bg-zinc-900 shadow-[-4px_-4px_10px_rgba(255,255,255,0.1),4px_4px_10px_rgba(0,0,0,0.2)] transition-colors hover:bg-purple-600 hover:text-white">
             Learn More
-          </Button>
-          <Button className="cursor-pointer text-white py-2 px-5 bg-zinc-900 shadow-[0_2px_10px_rgba(255,255,255,0.1)] transition-colors hover:bg-purple-600 hover:text-white">
+          </Link>
+          <Link
+            href="#contact"
+            className="cursor-pointer rounded-md text-white py-2 px-5 bg-zinc-900 shadow-[-4px_-4px_10px_rgba(255,255,255,0.1),4px_4px_10px_rgba(0,0,0,0.2)] transition-colors hover:bg-purple-600 hover:text-white">
             Contact Me
-          </Button>
+          </Link>
         </div>
       </div>
       <Projects />
@@ -65,6 +71,7 @@ export default function Home() {
       <Skills />
       <Certifications />
       <Experience />
+      <Contact />
     </div>
   );
 }

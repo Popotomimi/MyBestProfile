@@ -16,7 +16,12 @@ const certificates = [
 
 const Certifications = () => {
   const [activeIndex, setActiveIndex] = useState(2);
-  const [horizontalSpacing, setHorizontalSpacing] = useState(280); // default seguro
+  const [horizontalSpacing, setHorizontalSpacing] = useState(280);
+  const [showModal, setShowModal] = useState(false);
+  const [modalImage, setModalImage] = useState<{
+    src: string;
+    alt: string;
+  } | null>(null);
 
   useEffect(() => {
     const updateSpacing = () => {
@@ -24,13 +29,18 @@ const Certifications = () => {
       setHorizontalSpacing(width < 640 ? 140 : 280);
     };
 
-    updateSpacing(); // inicial
+    updateSpacing();
     window.addEventListener("resize", updateSpacing);
     return () => window.removeEventListener("resize", updateSpacing);
   }, []);
 
-  const handleClick = (index: number) => {
+  const handleImageClick = (index: number) => {
     setActiveIndex(index);
+    if (index === activeIndex) {
+      const cert = certificates[index];
+      setModalImage({ src: cert.src, alt: cert.alt });
+      setShowModal(true);
+    }
   };
 
   return (
@@ -64,18 +74,37 @@ const Certifications = () => {
                 left: `calc(50% + ${position * horizontalSpacing}px)`,
                 transform: `translateX(-50%) translateY(${translateY})`,
               }}
-              onClick={() => handleClick(index)}>
+              onClick={() => handleImageClick(index)}>
               <Image
                 src={cert.src}
                 alt={cert.alt}
                 width={300}
                 height={200}
-                className="rounded shadow-lg object-cover w-full h-full"
+                className="rounded-lg shadow-[-4px_-4px_10px_rgba(255,255,255,0.1),4px_4px_10px_rgba(0,0,0,0.2)] object-cover w-full h-full"
               />
             </div>
           );
         })}
       </div>
+
+      {showModal && modalImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+          <div className="relative w-[90%] max-w-[600px]">
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-2 right-2 text-red-700 text-xl font-bold">
+              ✕
+            </button>
+            <Image
+              src={modalImage.src}
+              alt={modalImage.alt}
+              width={800}
+              height={600}
+              className="rounded-lg shadow-lg object-contain w-full h-auto"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

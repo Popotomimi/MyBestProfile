@@ -9,7 +9,7 @@ const ProjectAvatar = ({
 }) => (
   <div onClick={onClick} className="cursor-pointer flex justify-center py-4">
     <Image
-      className="rounded-full w-[80px] mx-3 h-[80px] md:w-[100px] md:h-[100px] object-cover shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+      className="rounded-full w-[80px] mx-3 h-[80px] md:w-[100px] md:h-[100px] object-cover shadow-[-4px_-4px_10px_rgba(255,255,255,0.1),4px_4px_10px_rgba(0,0,0,0.2)]"
       src={image}
       width={100}
       height={100}

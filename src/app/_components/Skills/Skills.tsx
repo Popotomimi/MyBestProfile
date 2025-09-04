@@ -28,14 +28,14 @@ const Skills = () => {
       <div className="flex justify-center gap-4 mt-8">
         <button
           onClick={() => handleSelect(0)}
-          className={`px-4 py-2 rounded cursor-pointer shadow-[0_0_15px_rgba(255,255,255,0.3)] ${
+          className={`px-4 py-2 rounded cursor-pointer shadow-[-4px_-4px_10px_rgba(255,255,255,0.1),4px_4px_10px_rgba(0,0,0,0.2)] ${
             activeIndex === 0 ? "bg-purple-600 text-white" : "bg-zinc-900"
           }`}>
           FrontEnd
         </button>
         <button
           onClick={() => handleSelect(1)}
-          className={`px-4 py-2 rounded cursor-pointer shadow-[0_0_15px_rgba(255,255,255,0.3)] ${
+          className={`px-4 py-2 rounded cursor-pointer shadow-[-4px_-4px_10px_rgba(255,255,255,0.1),4px_4px_10px_rgba(0,0,0,0.2)] ${
             activeIndex === 1 ? "bg-purple-600 text-white" : "bg-zinc-900"
           }`}>
           BackEnd

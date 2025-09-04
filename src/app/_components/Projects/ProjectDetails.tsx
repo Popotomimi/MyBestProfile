@@ -5,7 +5,7 @@ import { GrDeploy } from "react-icons/gr";
 import { Project } from "@/types/Project";
 
 const ProjectDetails = ({ project }: { project: Project }) => (
-  <div className="basis-full md:basis-[80%] md:ml-44 my-5 h-96 p-4 flex items-center justify-center md:max-w-[50%] bg-zinc-900 rounded shadow-[0_0_15px_rgba(255,255,255,0.3)] animate-slide-in">
+  <div className="basis-full md:basis-[80%] md:ml-44 my-5 h-96 p-4 flex items-center justify-center md:max-w-[50%] bg-zinc-900 rounded shadow-[-4px_-4px_10px_rgba(255,255,255,0.1),4px_4px_10px_rgba(0,0,0,0.2)] animate-slide-in">
     <div className="text-center text-white max-w-full">
       <div className="group">
         <Image
