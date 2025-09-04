@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { FaNodeJs, FaDocker, FaGit, FaGithub } from "react-icons/fa";
 import {
@@ -30,22 +32,15 @@ const backendIcons = [
   { icon: <FaGithub />, label: "GitHub", color: "#6e5494" },
 ];
 
-const positions = [
-  { top: "0%", left: "50%" },
-  { top: "30%", left: "92%" },
-  { top: "50%", left: "100%" },
-  { top: "75%", left: "90%" },
-  { top: "95%", left: "75%" },
-  { top: "100%", left: "50%" },
-  { top: "75%", left: "7%" },
-  { top: "50%", left: "0%" },
-  { top: "30%", left: "7%" },
-  { top: "10%", left: "25%" },
-  { top: "10%", left: "75%" },
-  { top: "95%", left: "25%" },
-  { top: "50%", left: "80%" },
-  { top: "50%", left: "20%" },
-];
+const getCircularPosition = (index: number, total: number, radius: number) => {
+  const angle = (index / total) * 2 * Math.PI;
+  const x = 50 + radius * Math.cos(angle);
+  const y = 50 + radius * Math.sin(angle);
+  return {
+    top: `${y.toFixed(2)}%`,
+    left: `${x.toFixed(2)}%`,
+  };
+};
 
 const BackendSkillsCircle = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -66,7 +61,7 @@ const BackendSkillsCircle = () => {
   };
 
   return (
-    <div className="relative w-full max-w-[400px] h-[400px] mx-auto mt-10">
+    <div className="relative w-full max-w-[300px] sm:max-w-[400px] h-[300px] sm:h-[400px] mx-auto mt-10">
       {/* Ícone central */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl p-10 rounded-full bg-zinc-900 shadow-[0_0_15px_rgba(255,255,255,0.3)]">
         <div style={{ color: backendIcons[selectedIndex ?? 0].color }}>
@@ -77,12 +72,12 @@ const BackendSkillsCircle = () => {
       {/* Ícones ao redor */}
       {backendIcons.map((item, index) => {
         const isAnimating = animatingIndex === index;
-        const position = positions[index];
+        const position = getCircularPosition(index, backendIcons.length, 40);
 
         return (
           <div
             key={index}
-            className={`absolute text-3xl cursor-pointer transition-all bg-zinc-900 p-2 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.3)] duration-700 ease-in-out ${
+            className={`absolute text-xl sm:text-3xl cursor-pointer transition-all bg-zinc-900 p-2 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.3)] duration-700 ease-in-out ${
               isAnimating ? "top-1/2 left-1/2 opacity-0 scale-0" : ""
             } hover:scale-110`}
             style={{

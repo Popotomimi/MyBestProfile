@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import About from "./_components/About/About";
 import Projects from "./_components/Projects/Projects";
 import Skills from "./_components/Skills/Skills";
+import Certifications from "./_components/Certifications/Certifications";
+import Experience from "./_components/Experience/Experience";
 
 export default function Home() {
   useEffect(() => {
@@ -61,6 +63,8 @@ export default function Home() {
       <Projects />
       <About />
       <Skills />
+      <Certifications />
+      <Experience />
     </div>
   );
 }

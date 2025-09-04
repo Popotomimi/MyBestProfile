@@ -5,7 +5,7 @@ import BackendSkillsCircle from "./BackendSkillsCircle";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const Skills = () => {
-  const [activeIndex, setActiveIndex] = useState(0); // 0 = Frontend, 1 = Backend
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev === 0 ? 1 : 0));
@@ -20,7 +20,7 @@ const Skills = () => {
   };
 
   return (
-    <div id="skills" className="mt-16 px-4">
+    <div id="resume" className="mt-16 px-4">
       <h2 className="text-end text-2xl mb-5">Skills</h2>
       <Line />
 
@@ -43,7 +43,7 @@ const Skills = () => {
       </div>
 
       {/* Carrossel com transição */}
-      <div className="relative flex justify-center items-center mt-12 min-h-[500px] w-full px-4 sm:px-0 sm:max-w-[500px] mx-auto overflow-hidden">
+      <div className="relative flex justify-center items-center mt-12 min-h-[350px] sm:min-h-[500px] w-full px-4 sm:px-0 sm:max-w-[500px] mx-auto overflow-hidden">
         {/* Seta esquerda */}
         <button
           onClick={handlePrev}
@@ -74,7 +74,7 @@ const Skills = () => {
         {/* Seta direita */}
         <button
           onClick={handleNext}
-          className="absolute cursor-pointer right-[-5px] text-2xl p-1 rounded-md bg-zinc-900 hover:scale-110 hover:text-purple-600 transition-transform z-50">
+          className="absolute cursor-pointer right-0 text-2xl p-1 rounded-md bg-zinc-900 hover:scale-110 hover:text-purple-600 transition-transform z-50">
           <IoIosArrowForward />
         </button>
       </div>

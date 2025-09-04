@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import {
   FaReact,
@@ -27,18 +29,15 @@ const frontendIcons = [
   { icon: <FaVuejs />, label: "Vue", color: "#42B883" },
 ];
 
-const positions = [
-  { top: "0%", left: "50%" },
-  { top: "10%", left: "80%" },
-  { top: "35%", left: "100%" },
-  { top: "65%", left: "100%" },
-  { top: "90%", left: "80%" },
-  { top: "100%", left: "50%" },
-  { top: "90%", left: "20%" },
-  { top: "65%", left: "5%" },
-  { top: "10%", left: "20%" },
-  { top: "35%", left: "5%" },
-];
+const getCircularPosition = (index: number, total: number, radius: number) => {
+  const angle = (index / total) * 2 * Math.PI;
+  const x = 50 + radius * Math.cos(angle);
+  const y = 50 + radius * Math.sin(angle);
+  return {
+    top: `${y.toFixed(2)}%`,
+    left: `${x.toFixed(2)}%`,
+  };
+};
 
 const FrontendSkillsCircle = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -59,7 +58,7 @@ const FrontendSkillsCircle = () => {
   };
 
   return (
-    <div className="relative w-full max-w-[400px] h-[400px] mx-auto mt-10">
+    <div className="relative w-full max-w-[300px] sm:max-w-[400px] h-[300px] sm:h-[400px] mx-auto mt-10">
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl sm:text-5xl p-10 sm:p-6 rounded-full bg-zinc-900 shadow-[0_0_15px_rgba(255,255,255,0.3)]">
         <div style={{ color: frontendIcons[selectedIndex ?? 0].color }}>
           {frontendIcons[selectedIndex ?? 0].icon}
@@ -67,12 +66,12 @@ const FrontendSkillsCircle = () => {
       </div>
       {frontendIcons.map((item, index) => {
         const isAnimating = animatingIndex === index;
-        const position = positions[index];
+        const position = getCircularPosition(index, frontendIcons.length, 40);
 
         return (
           <div
             key={index}
-            className={`absolute text-3xl cursor-pointer transition-all bg-zinc-900 p-2 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.3)] duration-700 ease-in-out ${
+            className={`absolute text-xl sm:text-3xl cursor-pointer transition-all bg-zinc-900 p-2 sm:p-3 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.3)] duration-700 ease-in-out ${
               isAnimating ? "top-1/2 left-1/2 opacity-0 scale-0" : ""
             } hover:scale-110`}
             style={{
