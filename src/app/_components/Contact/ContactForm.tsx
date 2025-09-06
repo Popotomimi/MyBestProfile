@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 const schema = z.object({
   name: z.string().min(2, "Nome muito curto"),
@@ -47,10 +48,10 @@ export default function ContactForm() {
     );
 
     if (response.ok) {
-      alert("Mensagem enviada com sucesso!");
+      toast.success("Mensagem enviada com sucesso!");
       form.reset();
     } else {
-      alert("Erro ao enviar. Tente novamente.");
+      toast.error("Erro ao enviar. Tente novamente.");
     }
   };
 
