@@ -60,8 +60,13 @@ const FrontendSkillsCircle = () => {
   return (
     <div className="relative w-full max-w-[300px] sm:max-w-[400px] h-[300px] sm:h-[400px] mx-auto mt-10">
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl sm:text-5xl p-10 sm:p-6 rounded-full bg-zinc-900 shadow-[-4px_-4px_10px_rgba(255,255,255,0.1),4px_4px_10px_rgba(0,0,0,0.2)]">
-        <div style={{ color: frontendIcons[selectedIndex ?? 0].color }}>
+        <div
+          className="flex flex-col items-center justify-center gap-1"
+          style={{ color: frontendIcons[selectedIndex ?? 0].color }}>
           {frontendIcons[selectedIndex ?? 0].icon}
+          <p className="text-[1rem] absolute top-28">
+            {frontendIcons[selectedIndex ?? 0].label}
+          </p>
         </div>
       </div>
       {frontendIcons.map((item, index) => {

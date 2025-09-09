@@ -64,8 +64,13 @@ const BackendSkillsCircle = () => {
     <div className="relative w-full max-w-[300px] sm:max-w-[400px] h-[300px] sm:h-[400px] mx-auto mt-10">
       {/* Ícone central */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl p-10 rounded-full bg-zinc-900 shadow-[-4px_-4px_10px_rgba(255,255,255,0.1),4px_4px_10px_rgba(0,0,0,0.2)]">
-        <div style={{ color: backendIcons[selectedIndex ?? 0].color }}>
+        <div
+          className="flex flex-col items-center justify-center gap-1"
+          style={{ color: backendIcons[selectedIndex ?? 0].color }}>
           {backendIcons[selectedIndex ?? 0].icon}
+          <p className="text-[1rem] absolute top-28">
+            {backendIcons[selectedIndex ?? 0].label}
+          </p>
         </div>
       </div>
 

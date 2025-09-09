@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { MdWorkHistory } from "react-icons/md";
+import { PiEyeSlashDuotone } from "react-icons/pi";
 import ExperienceMobile from "./ExperienceMobile";
 
 const Experience = () => {
@@ -50,7 +50,7 @@ const Experience = () => {
             className="flex flex-col items-center justify-center cursor-pointer"
             onClick={handleToggle}>
             <div className="w-0.5 h-32 bg-zinc-600" />
-            <MdWorkHistory
+            <PiEyeSlashDuotone
               size={32}
               className="my-2 p-1 text-white hover:text-purple-600 transition-all duration-300 hover:scale-125 hover:rotate-12"
             />

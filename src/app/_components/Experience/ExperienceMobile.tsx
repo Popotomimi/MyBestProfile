@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { MdWorkHistory } from "react-icons/md";
+import { PiEyeSlashDuotone } from "react-icons/pi";
 
 const ExperienceMobile = () => {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -36,7 +36,7 @@ const ExperienceMobile = () => {
         className="flex flex-col items-center justify-start min-h-[460px] cursor-pointer"
         onClick={handleToggle}>
         <div className="w-0.5 flex-1 bg-zinc-600" />
-        <MdWorkHistory
+        <PiEyeSlashDuotone
           size={28}
           className={`my-2 text-purple-600 transition-all duration-300 hover:scale-125 hover:rotate-12 ${
             pulse ? "scale-125 opacity-60" : ""
