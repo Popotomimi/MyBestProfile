@@ -4,7 +4,7 @@ import Line from "../Line/Line";
 
 const certificates = [
   { id: 1, src: "/img/English.jpg", alt: "Certificado 1" },
-  { id: 2, src: "/img/Next.jpg", alt: "Certificado 2" },
+  { id: 2, src: "/img/NextRocketSeat.jpg", alt: "Certificado 2" },
   { id: 3, src: "/img/Faculdade.jpg", alt: "Certificado 3" },
   { id: 4, src: "/img/Nlw.jpg", alt: "Certificado 4" },
   { id: 5, src: "/img/MongoDB.jpg", alt: "Certificado 5" },
@@ -12,6 +12,7 @@ const certificates = [
   { id: 7, src: "/img/React.jpg", alt: "Certificado 7" },
   { id: 8, src: "/img/TailWind.jpg", alt: "Certificado 8" },
   { id: 9, src: "/img/TypeScript.jpg", alt: "Certificado 9" },
+  { id: 10, src: "/img/Next.jpg", alt: "Certificado 10" },
 ];
 
 const Certifications = () => {

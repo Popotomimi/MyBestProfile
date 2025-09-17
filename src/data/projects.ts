@@ -19,6 +19,14 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    image: "/img/SiteSet.jpg",
+    content: "Site.Set",
+    text: "Projeto em Next.js, de um blog utilizando markdowns",
+    git: "https://github.com/Popotomimi/NextRocketSeat",
+    online: "https://next-rocket-seat.vercel.app/",
+  },
+  {
+    id: 3,
     image: "/img/ReactQuiz.jpg",
     content: "ReactQuiz",
     text: "Um jogo de perguntas e respostas sobre programação.",
@@ -26,7 +34,7 @@ export const projects: Project[] = [
     online: "https://reactquizdev.netlify.app/",
   },
   {
-    id: 3,
+    id: 4,
     image: "/img/Album.jpg",
     content: "Album de Photos",
     text: "Projeto onde você pode acessar um banco de imagens e realizar o download...",
@@ -34,7 +42,7 @@ export const projects: Project[] = [
     online: "https://albumreactphotos.netlify.app/",
   },
   {
-    id: 4,
+    id: 5,
     image: "/img/DevNotes.jpg",
     content: "DevNotes",
     text: "Projeto FullStack um clone do Google Keep",
@@ -42,7 +50,7 @@ export const projects: Project[] = [
     online: "https://devnotesreact.netlify.app/",
   },
   {
-    id: 5,
+    id: 6,
     image: "/img/GitHubFinder.jpg",
     content: "GitHubFinder",
     text: "Projeto que faz integração com a API do GitHub",
@@ -50,7 +58,7 @@ export const projects: Project[] = [
     online: "https://searchreactgit.netlify.app/",
   },
   {
-    id: 6,
+    id: 7,
     image: "/img/MemoryGame.jpg",
     content: "MemoryGame",
     text: "Desenvolvi um jogo de memória com ícones de animais",
@@ -58,7 +66,7 @@ export const projects: Project[] = [
     online: "https://gamereactmemory.netlify.app/",
   },
   {
-    id: 7,
+    id: 8,
     image: "/img/Generate.jpg",
     content: "Gerador de Senhas",
     text: "Projeto onde você consegue gerar senhas aleatórias e seguras",
@@ -66,7 +74,7 @@ export const projects: Project[] = [
     online: "https://serene-trifle-07e9aa.netlify.app/",
   },
   {
-    id: 8,
+    id: 9,
     image: "/img/PokeNext.jpg",
     content: "PokeNext",
     text: "Desenvolvi uma aplicação web que utiliza a PokeAPI para exibir informações detalhadas sobre Pokémons.",
@@ -74,7 +82,7 @@ export const projects: Project[] = [
     online: "https://pokemonmalu.netlify.app/",
   },
   {
-    id: 9,
+    id: 10,
     image: "/img/SecretWord.jpg",
     content: "SecretWord",
     text: "Desenvolvi um jogo da forca interativo em React",
@@ -82,7 +90,7 @@ export const projects: Project[] = [
     online: "https://reactsecretword.netlify.app/",
   },
   {
-    id: 10,
+    id: 11,
     image: "/img/Clones.jpg",
     content: "Clones",
     text: "Desenvolvi clones da Amazon, Spotify e Facebook utilizando Next.js, TypeScript e Tailwind CSS.",

@@ -6,7 +6,7 @@ const Photo = () => {
     <div className="flex justify-center mt-6">
       <Avatar className="w-60 h-60 shadow-[-4px_-4px_10px_rgba(255,255,255,0.1),4px_4px_10px_rgba(0,0,0,0.2)]">
         <Image
-          src="https://media.licdn.com/dms/image/v2/D4D03AQFy2HLU_wk0lA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1699041260610?e=1759363200&v=beta&t=5g-Qq7xqvRrvrh74p3AA8sYzRrwwXDEFUpyq4h1WSks"
+          src="/img/Euzinho.jpg"
           alt="Roberto"
           width={250}
           height={250}
