@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import MobileMenu from "./_components/Navbar/MobileMenu";
 import Navbar from "./_components/Navbar/Navbar";
 import Photo from "./_components/Photo/Photo";
-import { Button } from "@/components/ui/button";
 import About from "./_components/About/About";
 import Projects from "./_components/Projects/Projects";
 import Skills from "./_components/Skills/Skills";
@@ -12,6 +11,7 @@ import Certifications from "./_components/Certifications/Certifications";
 import Experience from "./_components/Experience/Experience";
 import Contact from "./_components/Contact/Contact";
 import Link from "next/link";
+import Chat from "./_components/Chat/Chat";
 
 export default function Home() {
   useEffect(() => {
@@ -72,6 +72,7 @@ export default function Home() {
       <Certifications />
       <Experience />
       <Contact />
+      <Chat />
     </div>
   );
 }

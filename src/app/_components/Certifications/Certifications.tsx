@@ -81,6 +81,7 @@ const Certifications = () => {
                 alt={cert.alt}
                 width={300}
                 height={200}
+                priority
                 className="rounded-lg shadow-[-4px_-4px_10px_rgba(255,255,255,0.1),4px_4px_10px_rgba(0,0,0,0.2)] object-cover w-full h-full"
               />
             </div>
@@ -93,7 +94,7 @@ const Certifications = () => {
           <div className="relative w-[90%] max-w-[600px]">
             <button
               onClick={() => setShowModal(false)}
-              className="absolute top-2 right-2 text-red-700 text-xl font-bold">
+              className="absolute top-2 right-2 text-red-700 text-xl font-bold cursor-pointer">
               ✕
             </button>
             <Image
@@ -101,6 +102,7 @@ const Certifications = () => {
               alt={modalImage.alt}
               width={800}
               height={600}
+              priority
               className="rounded-lg shadow-lg object-contain w-full h-auto"
             />
           </div>
