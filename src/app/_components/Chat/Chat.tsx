@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { FaRobot, FaUser, FaComments } from "react-icons/fa";
+import { toast, useSonner } from "sonner";
 
 type Message = {
   role: "user" | "assistant";
@@ -29,7 +30,10 @@ export default function Chat() {
   }, [messages, loading]);
 
   const sendMessage = async () => {
-    if (!input.trim()) return;
+    if (!input.trim()) {
+      toast.warning("Digite uma mensagem!");
+      return;
+    }
 
     const userMessage: Message = { role: "user", content: input };
     setMessages((prev) => [...prev, userMessage]);
